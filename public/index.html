@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pharmacy Management System </title>
+	
+	<base href="/app/">
+    <script src="modules/angular/angular.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="main.controller.js"></script>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link href="modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="modules/bootstrap/dist/css/custom.min.css" rel="stylesheet">
+	
+  </head>
+
+  <body class="nav-md" ng-app="DriverApp">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"> <span>Pharmacy Management System</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="modules/images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+             
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+			
+              <div class="menu_section">
+			    <li></li>
+                <h3>General</h3>
+				<li></li>
+                <ul class="nav side-menu">
+                  <li><a href="index.html"><i class="fa fa-home"></i> Home </a>
+                 
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Inventory <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    
+                      <li><a href="">Drug Management</a></li>
+                      <li><a href="">Order Management</a></li>
+                      <li><a href="">Generate Reports</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i>Prescription Management <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                     
+                    </ul>  
+                  </li>
+                  <li><a><i class="fa fa-table"></i>Patient Management <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    <!--<li><a href="">...</a></li>
+                      <li><a href="">...</a></li> -->
+                    </ul>
+                  </li>
+
+          
+                </ul>
+              </div>
+        
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav class="" role="navigation">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="modules/images/img.jpg" alt="">John Doe
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-controller="MainController">
+
+            <button ng-click="increase()">Increase</button>
+            {{count}}
+
+            <br><br>
+            <table>
+                <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Birthday</th>
+                    <th>Vehicle</th>
+                    <th>Ranking</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="driver in drivers">
+                    <td>{{driver.firstName}}</td>
+                    <td>{{driver.lastName}}</td>
+                    <td>{{driver.birthday}}</td>
+                    <td>{{driver.vehicle}}</td>
+                    <td>{{driver.ranking}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+
+            <form ng-submit="addDriver(driver)">
+            <input type="text" placeholder="First name" ng-model="driver.firstName">
+            <br>
+            <input type="text" placeholder="Last name" ng-model="driver.lastName">
+            <br>
+            <input type="text" placeholder="Birthday" ng-model="driver.birthday">
+            <br>
+            <input type="text" placeholder="Vehicle" ng-model="driver.vehicle">
+            <br>
+            <input type="text" placeholder="Rank" ng-model="driver.ranking">
+            <br>
+            <input type="submit" value="Add">
+            </form>
+
+            <br/>
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+         
+          <div class="clearfix"> 
+		  </div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+	
+    <!-- jQuery -->
+    <script src="modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="modules/bootstrap/dist/js/custom.min.js"></script>
+
+ 
+  </body>
+</html>
